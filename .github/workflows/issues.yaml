@@ -19,8 +19,8 @@ jobs:
     if: github.event.label.name == 'request'
     runs-on: ubuntu-latest
     steps:
-      - run: echo "removing license"
-        name: "removing license for ${{ env.LOGIN }}"
+      - run: echo "requesting license"
+        name: "requesting license for ${{ env.LOGIN }}"
   remove:
     if: github.event.label.name == 'remove'
     runs-on: ubuntu-latest
