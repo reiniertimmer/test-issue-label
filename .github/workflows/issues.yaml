@@ -1,0 +1,22 @@
+on:
+  issues:
+    type:
+      - labeled
+
+env:
+  LOGIN: github.event.issue.user.login
+
+jobs:
+  request:
+    if: github.event.label.name == 'request'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "removing license"
+        name: "removing license for ${{ env.LOGIN }}"
+  remove:
+    if: github.event.label.name == 'remove'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "assigning license"
+        name: "removing license for ${{ env.LOGIN }}"
+      
