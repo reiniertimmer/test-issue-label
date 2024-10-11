@@ -4,7 +4,7 @@ on:
       - labeled
 
 env:
-  LOGIN: github.event.issue.user.login
+  LOGIN: ${{ github.event.issue.user.login }}
 
 jobs:
   debug:
