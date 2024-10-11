@@ -7,6 +7,14 @@ env:
   LOGIN: github.event.issue.user.login
 
 jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "login $LOGIN"
+          echo "label $LABEL"
+        env:
+          LABEL: ${{ toJSON(github.event.label) }}
   request:
     if: github.event.label.name == 'request'
     runs-on: ubuntu-latest
